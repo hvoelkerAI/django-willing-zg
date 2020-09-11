@@ -1,4 +1,4 @@
-from zygoat_django.settings import env, REST_FRAMEWORK, prod_required_env
+from zygoat_django.settings import REST_FRAMEWORK, prod_required_env
 
 REST_FRAMEWORK["DEFAULT_AUTHENTICATION_CLASSES"] = (
     "simplejwt_extensions.authentication.JWTAuthentication",
