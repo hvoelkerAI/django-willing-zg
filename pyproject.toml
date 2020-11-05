@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-willing-zg"
-version = "0.2.4"
+version = "0.3.0"
 description = ""
 readme = "README.md"
 authors = ["Bequest, Inc. <oss@willing.com>"]
@@ -9,10 +9,10 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.7"
+python = ">=3.7,<4.0"
 django = "^3.0.8"
 djangorestframework = "^3.11.0"
-zygoat-django = "^0.1.4"
+zygoat-django = "^0.3.0"
 cryptography = "^3.1"
 djangorestframework-simplejwt = "^4.4.0"
 simplejwt-extensions = "^0.2.1"
