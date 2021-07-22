@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ZygoatConfig(AppConfig):
-    name = "zygoat"
+    name = "willing_zg"
