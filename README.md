@@ -15,3 +15,7 @@ A Django app to hold common utilities for Zygoat-managed applications
 3. Include the willing_zg URLconf in your project's urls.py:
 
     path('api/zygoat/', include('willing_zg.urls')),
+
+4. Import willing-zg settings into the django settings
+
+   from willing_zg.settings import * # noqa
