@@ -1,6 +1,8 @@
 import os
 import json
+
 import boto3
+from zygoat_django.settings.environment import env
 
 
 def get_secret(secret_arn):
@@ -21,6 +23,10 @@ if "DATABASE_SECRET" in os.environ:
 
     db_url = f"postgres://{db_username}:{db_password}@{db_host}:{db_port}/{db_clusterid}"
     os.environ["DATABASE_URL"] = db_url
+
+    db_config = env.db_url("DATABASE_URL", default="postgres://postgres:postgres@db/postgres")
+
+    DATABASES = {"default": db_config}
 
 if "DJANGO_EMAIL_HOST_PASSWORD" in os.environ:
     django_password = json.loads(
