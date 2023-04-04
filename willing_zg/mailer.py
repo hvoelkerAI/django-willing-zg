@@ -8,7 +8,7 @@ class MailerError(Exception):
 
 
 class Mailer:
-    """ The Mailer class holds helper functions for sending template emails """
+    """The Mailer class holds helper functions for sending template emails"""
 
     @classmethod
     def send_email(
