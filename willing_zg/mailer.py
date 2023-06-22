@@ -21,6 +21,7 @@ class Mailer:
         attachments=None,
         reply_to=None,
         from_email=None,
+        headers=None,
     ):
         if not len(to_emails):
             raise MailerError("no TO EMAIL provided")
@@ -48,6 +49,7 @@ class Mailer:
             to=to_emails,
             bcc=bcc,
             reply_to=reply_to,
+            headers=headers,
         )
 
         message.attach_alternative(email_html, "text/html")
@@ -65,7 +67,7 @@ class Mailer:
             return False
 
     @classmethod
-    def send_account_notice(cls, user, subject, text):
+    def send_account_notice(cls, user, subject, text, *args, **kwargs):
         return cls.send_email(
             [user.email],
             f"Account Notice: {subject}",
@@ -74,4 +76,6 @@ class Mailer:
                 "user": user,
                 "notice": text,
             },
+            *args,
+            **kwargs,
         )
