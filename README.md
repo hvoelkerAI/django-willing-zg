@@ -19,3 +19,9 @@ A Django app to hold common utilities for Zygoat-managed applications
 4. Import willing-zg settings into the django settings
 
    from willing_zg.settings import * # noqa
+
+
+## Running locally for development
+1. checkout the directory into the `backend` directory of the app you're developing in
+
+2. modify your Dockerfile.local and add `ADD /django-willing-zg /django-willing-zg` above `WORKDIR /code` and add ` RUN poetry add --editable /django-willing-zg` after poetry install
